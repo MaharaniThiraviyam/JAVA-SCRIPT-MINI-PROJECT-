@@ -1,0 +1,504 @@
+<html>
+<head>
+<script language="javascript">
+function d()
+{
+var d,z,mon,days=0,check,week,remday,totalday,m,y,od1,z1,z2,leep,odd,odd1;
+d=parseInt(f1.date.value);
+m=parseInt(f1.mont.value);
+y=parseInt(f1.year.value);
+y1=parseInt(y%4);
+if(y1==0)
+{
+if((y>1604)&&(y<=2600))
+{
+z=y-1600;
+if (z<=100)
+{
+z1=0;
+z2=z;
+}
+else if(z<=200)
+{
+z1=100;
+z2=z-100;
+}
+else if(z<=300)
+{
+z1=200;
+z2=z-200;
+}
+else if(z<=400)
+{
+z1=300;
+z2=z-300;
+}
+else if(z<=500)
+{
+z1=400;
+z2=z-400;
+}
+else if(z<=600)
+{
+z1=500;
+z2=z-500;
+}
+else if(z<=700)
+{
+z1=600;
+z2=z-600;
+}
+else if(z<=800)
+{
+z1=700;
+z2=z-700;
+}
+else if(z<=900)
+{
+z1=800;
+z2=z-800;
+}
+else if(z<=1000)
+{
+z1=900;
+z2=z-900;
+}
+if(z1==100)
+odd1=5;
+if(z1==200)
+odd1=3;
+if(z1==300)
+odd1=1;
+if(z1==400)
+odd1=0;
+if(z1==500)
+odd1=1;
+if(z1==600)
+odd1=3;
+if(z1==700)
+odd1=1;
+if(z1==800)
+odd1=0;
+if(z1==900)
+odd1=5;
+if(z1==1000)
+odd1=3;
+if(z1<100)
+odd1=0;
+z2=z2-1;
+if(z2<4)
+{
+odd=(z2*1);
+}
+else
+{
+leep=parseInt(z2/4);
+z2=z2-leep;
+odd=((leep*2)+z2);
+}
+mon=12-m;
+check=(y%4);
+if(check==0)
+{
+switch(mon)
+{
+case 0:days=days+335;
+break;
+case 1:days=days+305;
+break;
+case 2:days=days+274;
+break;
+case 3:days=days+244;
+break;
+case 4:days=days+213;
+break;
+case 5:days=days+182;
+break;
+case 6:days=days+152;
+break;
+case 7:days=days+121;
+break;
+case 8:days=days+91;
+break;
+case 9: days=days+60;
+break;
+case 10:days=days+31;
+break;
+}
+}
+else
+{
+switch(mon)
+{
+case 0:days=days+334;
+break;
+case 1:days=days+304;
+break;
+case 2:days=days+273;
+break;
+case 3:days=days+243;
+break;
+case 4:days=days+212;
+break;
+case 5:days=days+181;
+break;
+case 6:days=days+151;
+break;
+case 7:days=days+120;
+break;
+case 8:days=days+90;
+break;
+case 9:days=days+59;
+break;
+case 10:days=days+31;
+break;
+}
+}
+totalday=odd1+odd+days+d;
+week=parseInt(totalday/7);
+remday=parseInt(totalday%7);
+while(remday>7)
+{
+week=parseInt(totalday/7);
+remday=parseInt(totalday%7);
+}
+switch(remday)
+{
+case 0:alert(d+"."+m+"."+y+" "+"is sunday");
+break;
+case 1:alert(d+"."+m+"."+y+" "+"is monday");
+break;
+case 2:alert(d+"."+m+"."+y+" "+"is tuesday");
+break;
+case 3:alert(d+"."+m+"."+y+" "+"is wednesday");
+break;
+case 4:alert(d+"."+m+"."+y+" "+"is thrusday");
+break;
+case 5:alert(d+"."+m+"."+y+" "+"is friday");
+break;
+case 6:alert(d+"."+m+"."+y+" "+"is saturday");
+break;
+}
+}
+else if((y>=1600)&&(y<=1604))
+{
+years=y-1600;
+years=years-1;
+days=years+d;
+months=12-m;
+switch(months)
+{
+case 0:days=days+334;
+break;
+case 1:days=days+304;
+break;
+case 2:days=days+273;
+break;
+case 3:days=days+243;
+break;
+case 4:days=days+212;
+break;
+case 5:days=days+181;
+break;
+case 6:days=days+151;
+break;
+case 7:days=days+120;
+break;
+case 8:days=days+90;
+break;
+case 9:days=days+59;
+break;
+case 10:days=days+31;
+break;
+case 11:days=days+0;
+break;
+}
+remday=parseInt(days%7);
+while(remday>7)
+{
+week=parseInt(days/7);
+remday=parseInt(days%7);
+}
+switch(remday)
+{
+case 0:alert(d+"."+m+"."+y+" "+"is sunday");
+break;
+case 1:alert(d+"."+m+"."+y+" "+"is monday");
+break;
+case 2:alert(d+"."+m+"."+y+" "+"is tuesday");
+break;
+case 3:alert(d+"."+m+"."+y+" "+"is wednesday");
+break;
+case 4:alert(d+"."+m+"."+y+" "+"is thrusday");
+break;
+case 5:alert(d+"."+m+"."+y+" "+"is friday");
+break;
+case 6:alert(d+"."+m+"."+y+" "+"is saturday");
+break;
+}
+}
+else
+alert("Cannot find");
+alert("THANK YOU!!! for use the calender");
+}
+else if((d!=29)&&(m!=2))
+{
+if((y>1604)&&(y<=2600))
+{
+document.writeln("hai");
+z=y-1600;
+document.writeln("z=",z);
+if (z<=100)
+{
+z1=0;
+z2=z;
+}
+else if(z<=200)
+{
+z1=100;
+z2=z-100;
+}
+else if(z<=300)
+{
+z1=200;
+z2=z-200;
+}
+else if(z<=400)
+{
+z1=300;
+z2=z-300;
+}
+else if(z<=500)
+{
+z1=400;
+z2=z-400;
+}
+else if(z<=600)
+{
+z1=500;
+z2=z-500;
+}
+else if(z<=700)
+{
+z1=600;
+z2=z-600;
+}
+else if(z<=800)
+{
+z1=700;
+z2=z-700;
+}
+else if(z<=900)
+{
+z1=800;
+z2=z-800;
+}
+else if(z<=1000)
+{
+z1=900;
+z2=z-900;
+}
+if(z1==100)
+odd1=5;
+if(z1==200)
+odd1=3;
+if(z1==300)
+odd1=1;
+if(z1==400)
+odd1=0;
+if(z1==500)
+odd1=1;
+if(z1==600)
+odd1=3;
+if(z1==700)
+odd1=1;
+if(z1==800)
+odd1=0;
+if(z1==900)
+odd1=5;
+if(z1==1000)
+odd1=3;
+if(z1<100)
+odd1=0;
+z2=z2-1;
+if(z2<4)
+{
+odd=(z2*1);
+}
+else
+{
+leep=parseInt(z2/4);
+z2=z2-leep;
+odd=((leep*2)+z2);
+}
+mon=12-m;
+check=(y%4);
+if(check==0)
+{
+switch(mon)
+{
+case 0:days=days+335;
+break;
+case 1:days=days+305;
+break;
+case 2:days=days+274;
+break;
+case 3:days=days+244;
+break;
+case 4:days=days+213;
+break;
+case 5:days=days+182;
+break;
+case 6:days=days+152;
+break;
+case 7:days=days+121;
+break;
+case 8:days=days+91;
+break;
+case 9: days=days+60;
+break;
+case 10:days=days+31;
+break;
+}
+}
+else
+{
+switch(mon)
+{
+case 0:days=days+334;
+break;
+case 1:days=days+304;
+break;
+case 2:days=days+273;
+break;
+case 3:days=days+243;
+break;
+case 4:days=days+212;
+break;
+case 5:days=days+181;
+break;
+case 6:days=days+151;
+break;
+case 7:days=days+120;
+break;
+case 8:days=days+90;
+break;
+case 9:days=days+59;
+break;
+case 10:days=days+31;
+break;
+}
+}
+totalday=odd1+odd+days+d;
+week=parseInt(totalday/7);
+remday=parseInt(totalday%7);
+while(remday>7)
+{
+week=parseInt(totalday/7);
+remday=parseInt(totalday%7);
+}
+switch(remday)
+{
+case 0:alert(d+"."+m+"."+y+" "+"is sunday");
+break;
+case 1:alert(d+"."+m+"."+y+" "+"is monday");
+break;
+case 2:alert(d+"."+m+"."+y+" "+"is tuesday");
+break;
+case 3:alert(d+"."+m+"."+y+" "+"is wednesday");
+break;
+case 4:alert(d+"."+m+"."+y+" "+"is thrusday");
+break;
+case 5:alert(d+"."+m+"."+y+" "+"is friday");
+break;
+case 6:alert(d+"."+m+"."+y+" "+"is saturday");
+break;
+}
+}
+else if((y>=1600)&&(y<=1604))
+{
+years=y-1600;
+years=years-1;
+days=years+d;
+months=12-m;
+switch(months)
+{
+case 0:days=days+334;
+break;
+case 1:days=days+304;
+break;
+case 2:days=days+273;
+break;
+case 3:days=days+243;
+break;
+case 4:days=days+212;
+break;
+case 5:days=days+181;
+break;
+case 6:days=days+151;
+break;
+case 7:days=days+120;
+break;
+case 8:days=days+90;
+break;
+case 9:days=days+59;
+break;
+case 10:days=days+31;
+break;
+case 11:days=days+0;
+break;
+}
+remday=parseInt(days%7);
+while(remday>7)
+{
+week=parseInt(days/7);
+remday=parseInt(days%7);
+}
+switch(remday)
+{
+case 0:alert(d+"."+m+"."+y+" "+"is sunday");
+break;
+case 1:alert(d+"."+m+"."+y+" "+"is monday");
+break;
+case 2:alert(d+"."+m+"."+y+" "+"is tuesday");
+break;
+case 3:alert(d+"."+m+"."+y+" "+"is wednesday");
+break;
+case 4:alert(d+"."+m+"."+y+" "+"is thrusday");
+break;
+case 5:alert(d+"."+m+"."+y+" "+"is friday");
+break;
+case 6:alert(d+"."+m+"."+y+" "+"is saturday");
+break;
+}
+}
+else
+alert("Cannot find");
+}
+else if((y>2600)||(y<1600))
+alert("not leap year and also cannot find");
+else 
+alert("not leap year");
+alert("THANK YOU!!! for use the calender");
+
+}
+
+</script>
+</head>
+<body bgcolor="gold">
+<form name="f1"><center><h1>
+<font face="Lucida Calligraphy" color="red"><marquee direction="left">EXCLUSIVE CALENDER FROM 1601 TO 2600
+</marquee></font>
+<br>
+<br>
+<font face="Lucida Calligraphy" color="blue"><marquee direction="right">HEARTLY WELCOME YOU</marquee>
+</font></h1></center>
+<br><br>
+<center><h2><font color="green">
+<pre>
+ Date  <input type="text" name="date">         Month  <input type="text" name="mont">      Year  <input type="text" name="year"><br><br>
+<br><br>
+<input type="button" value="click me" onclick="d()">         <input type="reset"></font></h2></center>
+</form>
+</body>
+</html>
